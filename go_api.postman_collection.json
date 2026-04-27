@@ -1,13 +1,13 @@
 {
   "info": {
-    "name": "test-oldo API",
-    "description": "Postman Collection untuk API test-oldo — manajemen User, Paket, dan Transaksi.",
+    "name": "Pembelian Paket Data API",
+    "description": "Postman Collection untuk API Pembelian Paket Data — manajemen User, Paket, dan Transaksi.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
     {
       "key": "base_url",
-      "value": "http://localhost:3000",
+      "value": "http://127.0.0.1:3000",
       "type": "string"
     }
   ],
@@ -22,8 +22,12 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/",
-              "host": ["{{base_url}}"],
-              "path": [""]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                ""
+              ]
             },
             "description": "Cek apakah API sedang berjalan."
           },
@@ -62,8 +66,13 @@
             },
             "url": {
               "raw": "{{base_url}}/api/users",
-              "host": ["{{base_url}}"],
-              "path": ["api", "users"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users"
+              ]
             },
             "description": "Buat user baru. Field `name` dan `phone` wajib diisi."
           },
@@ -72,14 +81,24 @@
               "name": "201 Created",
               "status": "Created",
               "code": 201,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"OK\",\n  \"data\": {\n    \"id\": 1,\n    \"name\": \"Budi Santoso\",\n    \"phone\": \"08123456789\",\n    \"created_at\": \"2024-01-01T00:00:00Z\"\n  }\n}"
             },
             {
               "name": "400 Validation Error",
               "status": "Bad Request",
               "code": 400,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"name dan phone tidak boleh kosong\"\n}"
             }
           ]
@@ -91,8 +110,13 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/users",
-              "host": ["{{base_url}}"],
-              "path": ["api", "users"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users"
+              ]
             },
             "description": "Ambil semua data user."
           },
@@ -101,7 +125,12 @@
               "name": "200 OK",
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"OK\",\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"Budi Santoso\",\n      \"phone\": \"08123456789\",\n      \"created_at\": \"2024-01-01T00:00:00Z\"\n    }\n  ]\n}"
             }
           ]
@@ -113,8 +142,14 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/users/1",
-              "host": ["{{base_url}}"],
-              "path": ["api", "users", "1"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "1"
+              ]
             },
             "description": "Ambil data user berdasarkan ID."
           },
@@ -123,14 +158,24 @@
               "name": "200 OK",
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"OK\",\n  \"data\": {\n    \"id\": 1,\n    \"name\": \"Budi Santoso\",\n    \"phone\": \"08123456789\",\n    \"created_at\": \"2024-01-01T00:00:00Z\"\n  }\n}"
             },
             {
               "name": "404 Not Found",
               "status": "Not Found",
               "code": 404,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"user tidak ditemukan\"\n}"
             }
           ]
@@ -156,8 +201,14 @@
             },
             "url": {
               "raw": "{{base_url}}/api/users/1",
-              "host": ["{{base_url}}"],
-              "path": ["api", "users", "1"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "1"
+              ]
             },
             "description": "Update data user berdasarkan ID."
           },
@@ -166,14 +217,24 @@
               "name": "200 OK",
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"OK\",\n  \"data\": {\n    \"id\": 1,\n    \"name\": \"Budi Updated\",\n    \"phone\": \"08199999999\",\n    \"created_at\": \"2024-01-01T00:00:00Z\"\n  }\n}"
             },
             {
               "name": "400 Bad Request",
               "status": "Bad Request",
               "code": 400,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"invalid id\"\n}"
             }
           ]
@@ -185,8 +246,14 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/users/1",
-              "host": ["{{base_url}}"],
-              "path": ["api", "users", "1"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "1"
+              ]
             },
             "description": "Hapus user berdasarkan ID."
           },
@@ -195,14 +262,24 @@
               "name": "200 OK",
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"OK\",\n  \"data\": \"deleted\"\n}"
             },
             {
               "name": "400 Bad Request",
               "status": "Bad Request",
               "code": 400,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"invalid id\"\n}"
             }
           ]
@@ -233,8 +310,13 @@
             },
             "url": {
               "raw": "{{base_url}}/api/paket",
-              "host": ["{{base_url}}"],
-              "path": ["api", "paket"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "paket"
+              ]
             },
             "description": "Buat paket baru. Semua field wajib diisi dan bernilai positif."
           },
@@ -243,35 +325,60 @@
               "name": "201 Created",
               "status": "Created",
               "code": 201,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"OK\",\n  \"data\": {\n    \"id\": 1,\n    \"name\": \"Paket Hemat\",\n    \"price\": 50000,\n    \"quota\": 10,\n    \"active_period\": 30\n  }\n}"
             },
             {
               "name": "400 Nama Kosong",
               "status": "Bad Request",
               "code": 400,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"nama paket tidak boleh kosong\"\n}"
             },
             {
               "name": "400 Harga Invalid",
               "status": "Bad Request",
               "code": 400,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"harga harus lebih dari 0\"\n}"
             },
             {
               "name": "400 Quota Invalid",
               "status": "Bad Request",
               "code": 400,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"quota harus lebih dari 0\"\n}"
             },
             {
               "name": "400 Masa Aktif Invalid",
               "status": "Bad Request",
               "code": 400,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"masa aktif harus lebih dari 0\"\n}"
             }
           ]
@@ -283,8 +390,13 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/paket",
-              "host": ["{{base_url}}"],
-              "path": ["api", "paket"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "paket"
+              ]
             },
             "description": "Ambil semua data paket."
           },
@@ -293,7 +405,12 @@
               "name": "200 OK",
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"OK\",\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"Paket Hemat\",\n      \"price\": 50000,\n      \"quota\": 10,\n      \"active_period\": 30\n    }\n  ]\n}"
             }
           ]
@@ -305,8 +422,14 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/paket/1",
-              "host": ["{{base_url}}"],
-              "path": ["api", "paket", "1"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "paket",
+                "1"
+              ]
             },
             "description": "Ambil data paket berdasarkan ID."
           },
@@ -315,14 +438,24 @@
               "name": "200 OK",
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"OK\",\n  \"data\": {\n    \"id\": 1,\n    \"name\": \"Paket Hemat\",\n    \"price\": 50000,\n    \"quota\": 10,\n    \"active_period\": 30\n  }\n}"
             },
             {
               "name": "404 Not Found",
               "status": "Not Found",
               "code": 404,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"paket tidak ditemukan\"\n}"
             }
           ]
@@ -348,8 +481,14 @@
             },
             "url": {
               "raw": "{{base_url}}/api/paket/1",
-              "host": ["{{base_url}}"],
-              "path": ["api", "paket", "1"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "paket",
+                "1"
+              ]
             },
             "description": "Update data paket berdasarkan ID."
           },
@@ -358,14 +497,24 @@
               "name": "200 OK",
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"OK\",\n  \"data\": {\n    \"id\": 1,\n    \"name\": \"Paket Premium\",\n    \"price\": 100000,\n    \"quota\": 25,\n    \"active_period\": 60\n  }\n}"
             },
             {
               "name": "400 Bad Request",
               "status": "Bad Request",
               "code": 400,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"invalid id\"\n}"
             }
           ]
@@ -377,8 +526,14 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/paket/1",
-              "host": ["{{base_url}}"],
-              "path": ["api", "paket", "1"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "paket",
+                "1"
+              ]
             },
             "description": "Hapus paket berdasarkan ID."
           },
@@ -387,14 +542,24 @@
               "name": "200 OK",
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"OK\",\n  \"data\": \"deleted\"\n}"
             },
             {
               "name": "400 Bad Request",
               "status": "Bad Request",
               "code": 400,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"invalid id\"\n}"
             }
           ]
@@ -425,8 +590,13 @@
             },
             "url": {
               "raw": "{{base_url}}/api/transaksis",
-              "host": ["{{base_url}}"],
-              "path": ["api", "transaksis"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "transaksis"
+              ]
             },
             "description": "Buat transaksi baru. `user_id` dan `paket_id` wajib diisi dan harus valid. Harga otomatis diambil dari data paket."
           },
@@ -435,28 +605,48 @@
               "name": "201 Created",
               "status": "Created",
               "code": 201,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"OK\",\n  \"data\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"paket_id\": 1,\n    \"price\": 50000,\n    \"created_at\": \"2024-01-01T00:00:00Z\",\n    \"User\": null,\n    \"Paket\": null\n  }\n}"
             },
             {
               "name": "400 user_id / paket_id Kosong",
               "status": "Bad Request",
               "code": 400,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"user_id dan paket_id wajib diisi\"\n}"
             },
             {
               "name": "400 User Tidak Ditemukan",
               "status": "Bad Request",
               "code": 400,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"user tidak ditemukan\"\n}"
             },
             {
               "name": "400 Paket Tidak Ditemukan",
               "status": "Bad Request",
               "code": 400,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"paket tidak ditemukan\"\n}"
             }
           ]
@@ -468,8 +658,13 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/transaksis",
-              "host": ["{{base_url}}"],
-              "path": ["api", "transaksis"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "transaksis"
+              ]
             },
             "description": "Ambil semua data transaksi beserta relasi User dan Paket (preload)."
           },
@@ -478,7 +673,12 @@
               "name": "200 OK",
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"OK\",\n  \"data\": [\n    {\n      \"id\": 1,\n      \"user_id\": 1,\n      \"paket_id\": 1,\n      \"price\": 50000,\n      \"created_at\": \"2024-01-01T00:00:00Z\",\n      \"User\": {\n        \"id\": 1,\n        \"name\": \"Budi Santoso\",\n        \"phone\": \"08123456789\",\n        \"created_at\": \"2024-01-01T00:00:00Z\"\n      },\n      \"Paket\": {\n        \"id\": 1,\n        \"name\": \"Paket Hemat\",\n        \"price\": 50000,\n        \"quota\": 10,\n        \"active_period\": 30\n      }\n    }\n  ]\n}"
             }
           ]
@@ -490,8 +690,14 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/transaksis/1",
-              "host": ["{{base_url}}"],
-              "path": ["api", "transaksis", "1"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "transaksis",
+                "1"
+              ]
             },
             "description": "Ambil data transaksi berdasarkan ID beserta relasi User dan Paket (preload)."
           },
@@ -500,14 +706,24 @@
               "name": "200 OK",
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"OK\",\n  \"data\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"paket_id\": 1,\n    \"price\": 50000,\n    \"created_at\": \"2024-01-01T00:00:00Z\",\n    \"User\": {\n      \"id\": 1,\n      \"name\": \"Budi Santoso\",\n      \"phone\": \"08123456789\",\n      \"created_at\": \"2024-01-01T00:00:00Z\"\n    },\n    \"Paket\": {\n      \"id\": 1,\n      \"name\": \"Paket Hemat\",\n      \"price\": 50000,\n      \"quota\": 10,\n      \"active_period\": 30\n    }\n  }\n}"
             },
             {
               "name": "404 Not Found",
               "status": "Not Found",
               "code": 404,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
               "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"transaksi tidak ditemukan\"\n}"
             }
           ]

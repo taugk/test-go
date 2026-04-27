@@ -18,7 +18,8 @@ REST API sederhana untuk manajemen **User**, **Paket**, dan **Transaksi** menggu
 
 ```
 test-oldo/
-├── main.go
+├── cmd/
+|   └── main.go
 ├── .env
 ├── config/
 │   └── db.go          # Koneksi database
