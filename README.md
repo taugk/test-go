@@ -1,4 +1,4 @@
-# test-oldo
+# Test Go API
 
 REST API sederhana untuk manajemen **User**, **Paket**, dan **Transaksi** menggunakan Go, Fiber, GORM, dan PostgreSQL.
 
