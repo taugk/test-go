@@ -117,7 +117,7 @@ Jika berhasil masuk ke shell PostgreSQL tanpa error, database sudah siap digunak
 
 ```bash
 git clone https://github.com/taugk/test-go.git
-cd test-oldo
+cd test-go
 ```
 
 ### 2. Install Dependencies
