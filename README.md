@@ -116,7 +116,7 @@ Jika berhasil masuk ke shell PostgreSQL tanpa error, database sudah siap digunak
 ### 1. Clone & Masuk ke Direktori
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/taugk/test-go.git
 cd test-oldo
 ```
 
